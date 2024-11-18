@@ -1,0 +1,27 @@
+# This is a sample file, for detailed reference see: https://www.rudderstack.com/docs/profiles/get-started/profile-builder/
+inputs:
+  - name: rsIdentifies
+    app_defaults:
+      table: rudder_events_production.web.identifies
+      occurred_at_col: timestamp
+      ids:
+        - select: "user_id"
+          type: user_id
+          entity: user
+        - select: "anonymous_id"
+          type: anonymous_id
+          entity: user
+        - select: "lower(email)"
+          type: email
+          entity: user
+  - name: rsTracks
+    app_defaults:
+      table: rudder_events_production.web.tracks
+      occurred_at_col: timestamp
+      ids:
+        - select: "user_id"
+          type: user_id
+          entity: user
+        - select: "anonymous_id"
+          type: anonymous_id
+          entity: user
